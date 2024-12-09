@@ -105,24 +105,24 @@ export const ContactSection = () => {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 ">
             <Button
               asChild
               variant="outline"
-              className="w-full h-12 text-base font-medium hover:bg-primary/5"
+              className="w-full h-12 text-base font-medium hover:bg-primary/5 group/phone cursor-pointer transition-colors duration-300 z-10"
             >
               <a
                 href={`tel:${phoneNumber}`}
                 className="flex items-center justify-center gap-2"
               >
-                <Phone className="size-5" />
+                <Phone className="size-5 group-hover/phone:scale-110 transition-transform" />
                 Appelez-nous
               </a>
             </Button>
 
             <Button
               asChild
-              className="w-full h-12 text-base font-medium bg-[#25D366] hover:bg-[#20BD5B]"
+              className="w-full h-12 text-base font-medium bg-[#25D366] hover:bg-[#20BD5B] group/whatsapp cursor-pointer transition-colors duration-300 z-10"
             >
               <a
                 href={`https://wa.me/${phoneNumber.replace(
@@ -131,9 +131,9 @@ export const ContactSection = () => {
                 )}?text=${encodeURIComponent(whatsappMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-2 "
               >
-                <FaWhatsapp className="size-5" />
+                <FaWhatsapp className="size-5 group-hover/whatsapp:scale-110 transition-transform" />
                 WhatsApp
               </a>
             </Button>
@@ -141,13 +141,13 @@ export const ContactSection = () => {
             <Button
               asChild
               variant="secondary"
-              className="w-full h-12 text-base font-medium"
+              className="w-full h-12 text-base font-medium group/mail hover:bg-primary/5 cursor-pointer transition-colors duration-300 z-10"
             >
               <a
                 href={`mailto:${email}`}
                 className="flex items-center justify-center gap-2"
               >
-                <Mail className="size-5" />
+                <Mail className="size-5 group-hover/mail:scale-110 transition-transform" />
                 Envoyez-nous un email
               </a>
             </Button>
