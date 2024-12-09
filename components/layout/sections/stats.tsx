@@ -3,7 +3,7 @@ import { Building2, Shield, Users2, Award } from "lucide-react";
 
 const stats = [
   {
-    title: "Années d&apos;Expérience",
+    title: "Années d'Expérience",
     value: "10+",
     icon: Award,
     description: "Dans la sécurité et le nettoyage",

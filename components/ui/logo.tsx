@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface LogoProps {
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   withText?: boolean;
 }
 
@@ -13,16 +13,17 @@ export const Logo = ({
   withText = true,
 }: LogoProps) => {
   const sizes = {
-    sm: "h-8",
-    md: "h-10",
-    lg: "h-12",
+    sm: "h-10",
+    md: "h-12",
+    lg: "h-16",
+    xl: "h-24",
   };
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <div
         className={cn(
-          "relative aspect-square rounded-full bg-primary p-0.2 border border-primary/90 hover:bg-primary/90 transition-all duration-300",
+          "relative aspect-square rounded-full bg-primary p-0.2 border border-primary/90 hover:bg-primary/90 transition-all duration-300 cursor-pointer",
           sizes[size]
         )}
       >

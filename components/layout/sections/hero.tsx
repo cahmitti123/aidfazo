@@ -1,6 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -29,6 +30,9 @@ export const HeroSection = () => {
             </h1>
           </div>
 
+          <div className="w-full items-center align-middle justify-center flex py-5">
+            <Logo size="xl" withText={false} />
+          </div>
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
             NH MAROC S.A.R.L. vous offre des services professionnels de
             gardiennage, sécurité et nettoyage pour vos établissements publics
@@ -51,7 +55,7 @@ export const HeroSection = () => {
           <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl" />
           <Image
             width={1200}
-            height={1200}
+            height={800}
             className="w-full md:w-[1200px] mx-auto rounded-lg relative leading-none flex items-center"
             src="/security_guy_img.jpg"
             alt="Agent de sécurité professionnel en uniforme avec équipement radio"
