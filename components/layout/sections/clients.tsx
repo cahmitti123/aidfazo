@@ -1,5 +1,6 @@
 "use client";
 
+import { Separator } from "@/components/ui/separator";
 import { Marquee } from "@devnomic/marquee";
 import "@devnomic/marquee/dist/index.css";
 
@@ -43,7 +44,8 @@ export const ClientsSection = () => {
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-12">
-        Des entreprises qui nous font confiance pour leurs besoins en sécurité et nettoyage
+        Des entreprises qui nous font confiance pour leurs besoins en sécurité
+        et nettoyage
       </h3>
 
       <div className="mx-auto">
@@ -56,11 +58,10 @@ export const ClientsSection = () => {
           {clients.map(({ name, description }) => (
             <div
               key={name}
-              className="flex flex-col items-center justify-center h-32 w-64 bg-muted/50 hover:bg-muted/70 dark:bg-card dark:hover:bg-card/70 rounded-lg p-6 transition-colors duration-200"
+              className="flex flex-col items-center justify-center gap-2 w-64 bg-muted/50 hover:bg-muted/70 dark:bg-card dark:hover:bg-card/70 rounded-2xl py-2 px-4 transition-colors duration-200 border-2 border-primary/40 hover:border-primary/70 cursor-pointer"
             >
-              <span className="text-xl font-medium text-center mb-2">
-                {name}
-              </span>
+              <span className="text-xl font-medium text-center">{name}</span>
+              <Separator className="w-full border-primary/40" />
               <span className="text-sm text-muted-foreground text-center">
                 {description}
               </span>

@@ -37,10 +37,6 @@ interface FeatureProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#services",
-    label: "Services",
-  },
-  {
     href: "#benefits",
     label: "Avantages",
   },
@@ -137,7 +133,8 @@ export const Navbar = () => {
                       Services Professionnels
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Solutions complètes de sécurité et nettoyage pour votre entreprise
+                      Solutions complètes de sécurité et nettoyage pour votre
+                      entreprise
                     </p>
                   </div>
                   {serviceList.map(({ title, description, href }) => (
