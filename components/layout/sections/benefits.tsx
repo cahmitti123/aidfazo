@@ -1,85 +1,90 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { icons } from "lucide-react";
+import {
+  Award,
+  BadgeCheck,
+  Clock,
+  Handshake,
+  Shield,
+  Users2,
+  type LucideIcon,
+} from "lucide-react";
+import React from "react";
 
 interface BenefitsProps {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description: string;
 }
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "Blocks",
-    title: "Build Brand Trust",
+    icon: Shield,
+    title: "Expertise Reconnue",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Plus de 10 ans d'expérience dans la sécurité et le nettoyage professionnel au Maroc",
   },
   {
-    icon: "LineChart",
-    title: "More Leads",
+    icon: Users2,
+    title: "Personnel Qualifié",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "Agents formés et certifiés, régulièrement évalués pour maintenir un haut niveau de service",
   },
   {
-    icon: "Wallet",
-    title: "Higher Conversions",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+    icon: Clock,
+    title: "Disponibilité 24/7",
+    description: "Service continu avec intervention rapide en cas d'urgence",
   },
   {
-    icon: "Sparkle",
-    title: "Test Marketing Ideas",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+    icon: BadgeCheck,
+    title: "Certifications",
+    description: "Conformité aux normes nationales et internationales de sécurité et d'hygiène",
+  },
+  {
+    icon: Handshake,
+    title: "Service Personnalisé",
+    description: "Solutions adaptées à vos besoins spécifiques et à votre secteur d'activité",
+  },
+  {
+    icon: Award,
+    title: "Garantie Qualité",
+    description: "Engagement contractuel sur des objectifs de qualité mesurables",
   },
 ];
 
 export const BenefitsSection = () => {
   return (
     <section id="benefits" className="container py-24 sm:py-32">
-      <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
-        <div>
-          <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
+      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
+        Avantages
+      </h2>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Shortcut to Success
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
-          </p>
-        </div>
+      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+        Pourquoi Choisir NH MAROC ?
+      </h2>
 
-        <div className="grid lg:grid-cols-2 gap-4 w-full">
-          {benefitList.map(({ icon, title, description }, index) => (
-            <Card
-              key={title}
-              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
-            >
-              <CardHeader>
-                <div className="flex justify-between">
-                  <Icon
-                    name={icon as keyof typeof icons}
-                    size={32}
-                    color="hsl(var(--primary))"
-                    className="mb-6 text-primary"
-                  />
-                  <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
-                    0{index + 1}
-                  </span>
-                </div>
+      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
+        Découvrez les avantages qui font de nous le partenaire idéal pour vos
+        besoins en sécurité et propreté
+      </h3>
 
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {benefitList.map(({ icon, title, description }) => (
+          <Card key={title} className="bg-muted/50 dark:bg-card">
+            <CardHeader className="flex flex-row items-center gap-4 pb-2">
+              <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10">
+                {React.createElement(icon, {
+                  size: 32,
+                  className: "text-primary",
+                })}
+              </div>
+              <CardTitle className="text-xl">{title}</CardTitle>
+            </CardHeader>
 
-              <CardContent className="text-muted-foreground">
-                {description}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+            <CardContent className="text-muted-foreground">
+              {description}
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   );

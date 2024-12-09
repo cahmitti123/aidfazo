@@ -1,245 +1,118 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Building2, Clock, Mail, Phone } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-
-const formSchema = z.object({
-  firstName: z.string().min(2).max(255),
-  lastName: z.string().min(2).max(255),
-  email: z.string().email(),
-  subject: z.string().min(2).max(255),
-  message: z.string(),
-});
+import { Card } from "@/components/ui/card";
+import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const ContactSection = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "Web Development",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
-
-    const mailToLink = `mailto:leomirandadev@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
-
-    window.location.href = mailToLink;
-  }
+  const phoneNumber = "+212522000000"; // Update with real number
+  const whatsappMsg = "Bonjour NH MAROC, je souhaite en savoir plus sur vos services.";
+  const email = "contact@nhmaroc.ma";
 
   return (
     <section id="contact" className="container py-24 sm:py-32">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <div className="mb-4">
+          <div className="mb-8">
             <h2 className="text-lg text-primary mb-2 tracking-wider">
               Contact
             </h2>
-
-            <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Contactez-nous
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Nous sommes à votre disposition pour répondre à toutes vos
+              questions et vous accompagner dans vos besoins en sécurité et
+              nettoyage.
+            </p>
           </div>
-          <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            ipsam sint enim exercitationem ex autem corrupti quas tenetur
-          </p>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
             <div>
-              <div className="flex gap-2 mb-1">
-                <Building2 />
-                <div className="font-bold">Find us</div>
+              <div className="flex gap-2 mb-2">
+                <MapPin className="text-primary" />
+                <div className="font-bold">Notre Adresse</div>
               </div>
-
-              <div>742 Evergreen Terrace, Springfield, IL 62704</div>
+              <div className="text-muted-foreground pl-8">
+                N° 223 Groupe Al Ahd Appt N°1 1er étage Hay Nahda 1 Rabat
+              </div>
             </div>
 
             <div>
-              <div className="flex gap-2 mb-1">
-                <Phone />
-                <div className="font-bold">Call us</div>
+              <div className="flex gap-2 mb-2">
+                <Clock className="text-primary" />
+                <div className="font-bold">Horaires d&apos;ouverture</div>
               </div>
-
-              <div>+1 (619) 123-4567</div>
+              <div className="text-muted-foreground pl-8">
+                <div>Lundi - Vendredi</div>
+                <div>8h00 - 18h00</div>
+              </div>
             </div>
 
             <div>
-              <div className="flex gap-2 mb-1">
-                <Mail />
-                <div className="font-bold">Mail US</div>
+              <div className="flex gap-2 mb-2">
+                <Building2 className="text-primary" />
+                <div className="font-bold">Informations légales</div>
               </div>
-
-              <div>leomirandadev@gmail.com</div>
-            </div>
-
-            <div>
-              <div className="flex gap-2">
-                <Clock />
-                <div className="font-bold">Visit us</div>
-              </div>
-
-              <div>
-                <div>Monday - Friday</div>
-                <div>8AM - 4PM</div>
+              <div className="text-muted-foreground pl-8">
+                RC: 123456 - IF: 78901234 - ICE: 001234567890123
               </div>
             </div>
           </div>
         </div>
 
-        <Card className="bg-muted/60 dark:bg-card">
-          <CardHeader className="text-primary text-2xl"> </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="grid w-full gap-4"
+        <Card className="p-8">
+          <h3 className="text-2xl font-semibold mb-6">
+            Contactez-nous directement
+          </h3>
+
+          <div className="flex flex-col gap-4">
+            <Button
+              className="w-full flex gap-2 text-lg h-12"
+              asChild
+              variant="outline"
+            >
+              <a href={`tel:${phoneNumber}`}>
+                <Phone className="w-5 h-5" />
+                Appelez-nous
+              </a>
+            </Button>
+
+            <Button
+              className="w-full flex gap-2 text-lg h-12 bg-[#25D366] hover:bg-[#20BD5B]"
+              asChild
+            >
+              <a
+                href={`https://wa.me/${phoneNumber.replace(
+                  "+",
+                  ""
+                )}?text=${encodeURIComponent(whatsappMsg)}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <div className="flex flex-col md:!flex-row gap-8">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel>First Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Leopoldo" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel>Last Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Miranda" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FaWhatsapp className="w-5 h-5" />
+                WhatsApp
+              </a>
+            </Button>
 
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="leomirandadev@gmail.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+            <Button
+              className="w-full flex gap-2 text-lg h-12"
+              asChild
+              variant="secondary"
+            >
+              <a href={`mailto:${email}`}>
+                <Mail className="w-5 h-5" />
+                Envoyez-nous un email
+              </a>
+            </Button>
+          </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="Web Development">
-                              Web Development
-                            </SelectItem>
-                            <SelectItem value="Mobile Development">
-                              Mobile Development
-                            </SelectItem>
-                            <SelectItem value="Figma Design">
-                              Figma Design
-                            </SelectItem>
-                            <SelectItem value="REST API">REST API</SelectItem>
-                            <SelectItem value="FullStack Project">
-                              FullStack Project
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            rows={5}
-                            placeholder="Your message..."
-                            className="resize-none"
-                            {...field}
-                          />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <Button className="mt-4">Send message</Button>
-              </form>
-            </Form>
-          </CardContent>
-
-          <CardFooter></CardFooter>
+          <div className="mt-8 text-center text-muted-foreground">
+            <p>Choisissez la méthode qui vous convient le mieux</p>
+            <p>Nous vous répondrons dans les plus brefs délais</p>
+          </div>
         </Card>
-      </section>
+      </div>
     </section>
   );
 };

@@ -1,49 +1,56 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { icons } from "lucide-react";
+import {
+  CheckSquare,
+  Clock,
+  Headset,
+  Settings,
+  Shield,
+  Users,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface FeaturesProps {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description: string;
 }
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: Shield,
+    title: "Sécurité Garantie",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Agents qualifiés et formés régulièrement pour assurer une sécurité optimale",
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: Clock,
+    title: "Service 24/7",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Disponibilité permanente et intervention rapide en cas d'urgence",
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: CheckSquare,
+    title: "Qualité Certifiée",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Services conformes aux normes de qualité et de sécurité les plus strictes",
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: Users,
+    title: "Équipe Expérimentée",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Personnel professionnel avec une solide expérience dans le secteur",
   },
   {
-    icon: "MousePointerClick",
-    title: "Clear CTA",
+    icon: Settings,
+    title: "Solutions Sur Mesure",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Services adaptés à vos besoins spécifiques et à votre secteur d'activité",
   },
   {
-    icon: "Newspaper",
-    title: "Clear Headline",
+    icon: Headset,
+    title: "Support Réactif",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Équipe support disponible pour répondre à vos besoins et urgences",
   },
 ];
 
@@ -65,22 +72,15 @@ export const FeaturesSection = () => {
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {featureList.map(({ icon, title, description }) => (
+        {featureList.map(({ icon: Icon, title, description }) => (
           <div key={title}>
             <Card className="h-full bg-background border-0 shadow-none">
               <CardHeader className="flex justify-center items-center">
                 <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
-                  <Icon
-                    name={icon as keyof typeof icons}
-                    size={24}
-                    color="hsl(var(--primary))"
-                    className="text-primary"
-                  />
+                  <Icon size={24} className="text-primary" />
                 </div>
-
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
-
               <CardContent className="text-muted-foreground text-center">
                 {description}
               </CardContent>
