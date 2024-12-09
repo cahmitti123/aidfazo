@@ -80,7 +80,7 @@ export const ServicesSection = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-16">
-        {serviceList.map(({ title, description, icon: Icon, features, pro }) => (
+        {serviceList.map(({ title, description, icon: Icon, features }) => (
           <Card
             key={title}
             className="relative group hover:shadow-lg transition-all duration-300 border-2"

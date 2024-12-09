@@ -5,28 +5,30 @@ import "@devnomic/marquee/dist/index.css";
 
 interface ClientProps {
   name: string;
-  logo?: string;
-  description?: string;
+  description: string;
 }
 
 const clients: ClientProps[] = [
   {
-    name: "Ministère de l'Intérieur",
-    description: "Administration publique",
+    name: "SEBIT Car",
+    description: "Location de Voiture",
   },
   {
-    name: "ONCF",
-    description: "Transport ferroviaire",
+    name: "SOTEWI",
+    description: "Société Techno Web Informatique",
   },
   {
-    name: "Maroc Telecom",
-    description: "Télécommunications",
+    name: "RAYPROD",
+    description: "Production Audiovisuelle",
   },
   {
-    name: "Bank Al-Maghrib",
-    description: "Secteur bancaire",
+    name: "Chardina Grupo",
+    description: "SARLAU",
   },
-  // Add more real clients...
+  {
+    name: "TATWEER",
+    description: "Institut de Formation en Sécurité",
+  },
 ];
 
 export const ClientsSection = () => {
@@ -41,8 +43,7 @@ export const ClientsSection = () => {
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-12">
-        Des entreprises et institutions de premier plan qui nous font confiance
-        pour leurs besoins en sécurité et nettoyage
+        Des entreprises qui nous font confiance pour leurs besoins en sécurité et nettoyage
       </h3>
 
       <div className="mx-auto">
@@ -60,11 +61,9 @@ export const ClientsSection = () => {
               <span className="text-xl font-medium text-center mb-2">
                 {name}
               </span>
-              {description && (
-                <span className="text-sm text-muted-foreground text-center">
-                  {description}
-                </span>
-              )}
+              <span className="text-sm text-muted-foreground text-center">
+                {description}
+              </span>
             </div>
           ))}
         </Marquee>

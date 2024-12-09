@@ -5,9 +5,9 @@ import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export const ContactSection = () => {
-  const phoneNumber = "+212522000000"; // Update with real number
+  const phoneNumber = "+212640003832";
   const whatsappMsg = "Bonjour NH MAROC, je souhaite en savoir plus sur vos services.";
-  const email = "contact@nhmaroc.ma";
+  const email = "nhmaroc.12@gmail.com";
 
   return (
     <section id="contact" className="container py-24 sm:py-32">

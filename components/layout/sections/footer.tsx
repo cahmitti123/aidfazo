@@ -62,14 +62,14 @@ export const FooterSection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <Link href="tel:+212522000000" className="hover:text-primary">
-                  +212 522 00 00 00
+                <Link href="tel:+212640003832" className="hover:text-primary">
+                  +212 640-003832
                 </Link>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={16} />
-                <Link href="mailto:contact@nhmaroc.ma" className="hover:text-primary">
-                  contact@nhmaroc.ma
+                <Link href="mailto:nhmaroc.12@gmail.com" className="hover:text-primary">
+                  nhmaroc.12@gmail.com
                 </Link>
               </div>
               <div className="flex items-center gap-2">

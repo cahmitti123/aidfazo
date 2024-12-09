@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -6,24 +7,34 @@ interface LogoProps {
   withText?: boolean;
 }
 
-export const Logo = ({ className, size = "md", withText = true }: LogoProps) => {
+export const Logo = ({
+  className,
+  size = "md",
+  withText = true,
+}: LogoProps) => {
   const sizes = {
-    sm: "h-8 w-8",
-    md: "h-10 w-10",
-    lg: "h-12 w-12",
+    sm: "h-8",
+    md: "h-10",
+    lg: "h-12",
   };
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <div
         className={cn(
-          "flex items-center justify-center rounded-lg bg-gradient-to-tr from-primary via-primary/70 to-primary border border-secondary",
+          "relative aspect-square rounded-full bg-primary p-0.2 border border-primary/90 hover:bg-primary/90 transition-all duration-300",
           sizes[size]
         )}
       >
-        <span className="text-primary-foreground font-bold">
-          {size === "sm" ? "N" : "NH"}
-        </span>
+        <div className="relative w-full h-full">
+          <Image
+            src="/nh-logo.png"
+            alt="NH MAROC Logo"
+            fill
+            className="object-contain p-0.5"
+            priority
+          />
+        </div>
       </div>
       {withText && (
         <span className="font-bold text-xl">
@@ -32,4 +43,4 @@ export const Logo = ({ className, size = "md", withText = true }: LogoProps) => 
       )}
     </div>
   );
-}; 
+};

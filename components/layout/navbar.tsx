@@ -32,6 +32,7 @@ interface RouteProps {
 interface FeatureProps {
   title: string;
   description: string;
+  href: string;
 }
 
 const routeList: RouteProps[] = [
@@ -44,8 +45,12 @@ const routeList: RouteProps[] = [
     label: "Avantages",
   },
   {
+    href: "#stats",
+    label: "Chiffres",
+  },
+  {
     href: "#clients",
-    label: "Nos Clients",
+    label: "Références",
   },
   {
     href: "#contact",
@@ -53,18 +58,26 @@ const routeList: RouteProps[] = [
   },
 ];
 
-const featureList: FeatureProps[] = [
+const serviceList: FeatureProps[] = [
   {
-    title: "Gardiennage",
+    title: "Gardiennage & Sécurité",
     description: "Protection professionnelle 24/7 de vos établissements",
+    href: "#services",
   },
   {
-    title: "Nettoyage",
+    title: "Nettoyage Professionnel",
     description: "Services complets de nettoyage et d'entretien",
+    href: "#services",
   },
   {
     title: "Sécurité Événementielle",
-    description: "Protection et gestion de vos événements professionnels",
+    description: "Protection et gestion de vos événements",
+    href: "#services",
+  },
+  {
+    title: "Services Spécialisés",
+    description: "Solutions sur mesure selon vos besoins",
+    href: "#services",
   },
 ];
 
@@ -92,7 +105,7 @@ export const Navbar = () => {
               </SheetTitle>
             </SheetHeader>
 
-            <div className="flex flex-col gap-4 mt-4">
+            <nav className="flex flex-col gap-4 mt-4">
               {routeList.map(({ href, label }) => (
                 <Button
                   key={href}
@@ -104,7 +117,7 @@ export const Navbar = () => {
                   <Link href={href}>{label}</Link>
                 </Button>
               ))}
-            </div>
+            </nav>
 
             <SheetFooter className="mt-auto">
               <ToggleTheme />
@@ -124,13 +137,12 @@ export const Navbar = () => {
                       Services Professionnels
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Solutions complètes de sécurité et nettoyage pour votre
-                      entreprise
+                      Solutions complètes de sécurité et nettoyage pour votre entreprise
                     </p>
                   </div>
-                  {featureList.map(({ title, description }) => (
+                  {serviceList.map(({ title, description, href }) => (
                     <Link
-                      href="#services"
+                      href={href}
                       key={title}
                       className="group rounded-lg p-4 hover:bg-muted"
                     >
