@@ -3,7 +3,7 @@ import { Building2, Shield, Users2, Award } from "lucide-react";
 
 const stats = [
   {
-    title: "Années d'Expérience",
+    title: "Années d&apos;Expérience",
     value: "10+",
     icon: Award,
     description: "Dans la sécurité et le nettoyage",
@@ -40,7 +40,8 @@ export const StatsSection = () => {
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Des résultats qui témoignent de notre engagement envers l'excellence
+        Des résultats qui témoignent de notre engagement envers
+        l&apos;excellence
       </h3>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -61,4 +62,4 @@ export const StatsSection = () => {
       </div>
     </section>
   );
-}; 
+};
