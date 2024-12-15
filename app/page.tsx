@@ -8,30 +8,27 @@ import { ClientsSection } from "@/components/layout/sections/clients";
 import { StatsSection } from "@/components/layout/sections/stats";
 
 export const metadata = {
-  title: "NH MAROC - Services de Sécurité et Nettoyage",
-  description:
-    "Services professionnels de gardiennage, sécurité et nettoyage au Maroc",
+  title: "AIDE-FAZO - Services Professionnels",
+  description: "Services professionnels AIDE-FAZO",
   openGraph: {
     type: "website",
     url: "",
-    title: "NH MAROC - Services de Sécurité et Nettoyage",
-    description:
-      "Services professionnels de gardiennage, sécurité et nettoyage au Maroc",
+    title: "AIDE-FAZO - Services Professionnels",
+    description: "Services professionnels AIDE-FAZO",
     images: [
       {
         url: "",
         width: 1200,
         height: 630,
-        alt: "NH MAROC S.A.R.L.",
+        alt: "AIDE-FAZO",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "",
-    title: "NH MAROC - Services de Sécurité et Nettoyage",
-    description:
-      "Services professionnels de gardiennage, sécurité et nettoyage au Maroc",
+    title: "AIDE-FAZO - Services Professionnels",
+    description: "Services professionnels AIDE-FAZO",
     images: [""],
   },
 };

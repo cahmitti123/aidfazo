@@ -20,26 +20,26 @@ export const Logo = ({
   };
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-3", className)}>
       <div
         className={cn(
-          "relative aspect-square rounded-full bg-primary p-0.2 border border-primary/90 hover:bg-primary/90 transition-all duration-300 cursor-pointer",
+          "relative aspect-square bg-white shadow-md rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer",
           sizes[size]
         )}
       >
         <div className="relative w-full h-full">
           <Image
-            src="/nh-logo.png"
-            alt="NH MAROC Logo"
+            src="/af-logo.png"
+            alt="AIDE-FAZO Logo"
             fill
-            className="object-contain p-0.5"
+            className="object-contain p-1"
             priority
           />
         </div>
       </div>
       {withText && (
-        <span className="font-bold text-xl">
-          NH <span className="text-primary">MAROC</span>
+        <span className="font-bold text-xl tracking-tight">
+          AIDE-<span className="text-primary font-black">FAZO</span>
         </span>
       )}
     </div>

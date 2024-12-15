@@ -1,90 +1,108 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Award,
-  BadgeCheck,
-  Clock,
-  Handshake,
-  Shield,
-  Users2,
-  type LucideIcon,
-} from "lucide-react";
-import React from "react";
+"use client";
+import { Card, CardHeader } from "@/components/ui/card";
+import { Shield, Clock, BadgeCheck, HeartHandshake } from "lucide-react";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 
-interface BenefitsProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const benefitList: BenefitsProps[] = [
+const benefits = [
   {
-    icon: Shield,
     title: "Expertise Reconnue",
     description:
-      "Plus de 10 ans d'expérience dans la sécurité et le nettoyage professionnel au Maroc",
+      "Plus de 10 ans d'expérience dans le secteur de la sécurité et du nettoyage",
+    icon: Shield,
+    stats: "10+ ans",
   },
   {
-    icon: Users2,
+    title: "Service Rapide",
+    description:
+      "Intervention dans les plus brefs délais pour répondre à vos besoins",
+    icon: Clock,
+    stats: "24/7",
+  },
+  {
     title: "Personnel Qualifié",
     description:
-      "Agents formés et certifiés, régulièrement évalués pour maintenir un haut niveau de service",
-  },
-  {
-    icon: Clock,
-    title: "Disponibilité 24/7",
-    description: "Service continu avec intervention rapide en cas d'urgence",
-  },
-  {
+      "Équipe formée et certifiée pour des prestations de haute qualité",
     icon: BadgeCheck,
-    title: "Certifications",
-    description: "Conformité aux normes nationales et internationales de sécurité et d'hygiène",
+    stats: "100%",
   },
   {
-    icon: Handshake,
-    title: "Service Personnalisé",
-    description: "Solutions adaptées à vos besoins spécifiques et à votre secteur d'activité",
-  },
-  {
-    icon: Award,
-    title: "Garantie Qualité",
-    description: "Engagement contractuel sur des objectifs de qualité mesurables",
+    title: "Satisfaction Client",
+    description: "Un engagement total pour votre satisfaction et tranquillité",
+    icon: HeartHandshake,
+    stats: "98%",
   },
 ];
 
 export const BenefitsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section id="benefits" className="container py-24 sm:py-32">
-      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Avantages
-      </h2>
+    <section className="container py-24 sm:py-32">
+      <div className="relative">
+        {/* Background Elements */}
+        <div className="absolute -z-10 inset-0 bg-grid-black/[0.02] rounded-3xl" />
+        <div className="absolute -z-10 inset-x-0 -top-40 -bottom-40 bg-gradient-to-b from-primary/5 via-primary/5 to-transparent rounded-3xl" />
 
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Pourquoi Choisir NH MAROC ?
-      </h2>
+        <div className="relative space-y-6">
+          {/* Header */}
+          <div className="max-w-2xl mx-auto text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Pourquoi Choisir{" "}
+              <span className="bg-gradient-to-r from-primary/50 to-primary bg-clip-text text-transparent">
+                AIDE-FAZO
+              </span>
+              ?
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Des avantages concrets qui font la différence pour votre sécurité
+              et votre confort
+            </p>
+          </div>
 
-      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Découvrez les avantages qui font de nous le partenaire idéal pour vos
-        besoins en sécurité et propreté
-      </h3>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {benefitList.map(({ icon, title, description }) => (
-          <Card key={title} className="bg-muted/50 dark:bg-card">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10">
-                {React.createElement(icon, {
-                  size: 32,
-                  className: "text-primary",
-                })}
-              </div>
-              <CardTitle className="text-xl">{title}</CardTitle>
-            </CardHeader>
-
-            <CardContent className="text-muted-foreground">
-              {description}
-            </CardContent>
-          </Card>
-        ))}
+          {/* Benefits Grid */}
+          <div
+            ref={ref}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 px-2"
+            style={{
+              transform: isInView ? "none" : "translateY(20px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {benefits.map((benefit, index) => (
+              <Card
+                key={benefit.title}
+                className="relative group hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden cursor-pointer"
+                style={{
+                  transitionDelay: `${index * 100}ms`,
+                }}
+              >
+                <CardHeader>
+                  <div className="space-y-4">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                      <benefit.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-bold">{benefit.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {benefit.description}
+                      </p>
+                    </div>
+                    <div className="pt-2">
+                      <span className="text-3xl font-bold bg-gradient-to-r from-primary/70 to-primary bg-clip-text text-transparent">
+                        {benefit.stats}
+                      </span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
