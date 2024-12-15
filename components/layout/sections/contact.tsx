@@ -28,10 +28,10 @@ const informations = [
 export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const phoneNumber = "+212640003832";
+  const phoneNumber = "+212671386988";
   const whatsappMsg =
     "Bonjour AIDE-FAZO, je souhaite obtenir plus d'informations sur vos services de sécurité et nettoyage.";
-  const email = "contact@aide-fazo.com";
+  const email = "contact@aidefazo.com";
 
   return (
     <section id="contact" className="container py-24 sm:py-32">
