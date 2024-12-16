@@ -29,26 +29,24 @@ export const HeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                La{" "}
+                Votre référence en services de{" "}
                 <span className="text-primary relative inline-block">
-                  Protection
+                  ménage et sécurité
                   <div className="absolute -bottom-2 left-0 w-full h-2 bg-primary/20 rounded-full" />
-                </span>{" "}
-                de vos biens assurée
+                </span>
               </h1>
 
               <div className="space-y-4">
                 <p className="text-xl text-muted-foreground">
-                  Solutions professionnelles de gardiennage et nettoyage pour la
-                  protection et l&apos;entretien de vos espaces
+                  Forts de notre expertise et de notre engagement envers l&apos;excellence, nous offrons des prestations sur mesure pour répondre aux besoins variés de nos clients professionnels et particuliers.
                 </p>
 
                 {/* Added Key Points */}
                 <div className="grid gap-2">
                   {[
-                    "Personnel qualifié",
-                    "Service 24/7",
-                    "Intervention rapide",
+                    "Personnel qualifié et formé",
+                    "Service personnalisé",
+                    "Excellence et professionnalisme",
                   ].map((point) => (
                     <div
                       key={point}

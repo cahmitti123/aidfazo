@@ -15,20 +15,24 @@ import { useInView } from "framer-motion";
 const serviceList = [
   {
     icon: Shield,
-    title: "Gardiennage & Sécurité",
-    description: "Protection professionnelle 24/7 de vos établissements",
+    title: "Services de Ménage",
+    description: "Services complets de nettoyage et d'entretien professionnel",
     features: [
-      "Surveillance continue",
-      "Contrôle d'accès",
-      "Rondes de sécurité",
+      "Nettoyage régulier",
+      "Entretien des locaux",
+      "Personnel qualifié",
     ],
     color: "from-primary/20 to-primary/5",
   },
   {
     icon: Sparkles,
-    title: "Nettoyage Professionnel",
-    description: "Services complets de nettoyage et d'entretien",
-    features: ["Nettoyage régulier", "Désinfection", "Entretien des locaux"],
+    title: "Services de Sécurité",
+    description: "Protection professionnelle adaptée à vos besoins",
+    features: [
+      "Surveillance continue",
+      "Personnel formé",
+      "Solutions sur mesure",
+    ],
     color: "from-primary/15 to-primary/5",
   },
   {
