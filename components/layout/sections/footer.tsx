@@ -68,7 +68,10 @@ export const FooterSection = () => {
           <div className="flex flex-col gap-2">
             <h3 className="font-bold text-lg">Contact</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              *
+              <div className="flex items-center gap-2">
+                <MapPin size={16} />
+                <span>54 RUE TANSIFT N 01 AGDAL RABAT</span>
+              </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
                 <Link href="tel:+212671386988" className="hover:text-primary">

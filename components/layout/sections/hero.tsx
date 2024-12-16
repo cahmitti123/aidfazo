@@ -117,13 +117,26 @@ export const HeroSection = () => {
           {/* Enhanced Right Image Section */}
           <div className="relative aspect-[4/3] lg:aspect-square w-full">
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-muted-foreground/20">
-              <Image
-                src="/security_guy_img.jpg"
-                alt="Agent de sécurité professionnel"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                priority
-              />
+              <div className="relative w-full h-full">
+                <div className="absolute inset-0 w-1/2">
+                  <Image
+                    src="/security_guy_img.jpg"
+                    alt="Agent de sécurité professionnel"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                </div>
+                <div className="absolute inset-0 left-1/2 w-1/2">
+                  <Image
+                    src="/cleanning_img.jpeg"
+                    alt="Service de nettoyage professionnel"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                </div>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-tr from-background/90 via-background/50 to-transparent" />
             </div>
 
