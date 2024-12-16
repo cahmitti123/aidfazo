@@ -72,7 +72,7 @@ export const ContactSection = () => {
             <div className="space-y-8 h-full">
               <Card className="border-0 shadow-none bg-transparent h-full">
                 <CardContent className="space-y-6 p-0 flex flex-col align-middle h-full justify-center">
-                  <div className="group">
+                  {/* <div className="group">
                     <div className="flex items-center gap-3 border-y-2 hover:border-primary/70 transition-all duration-300 border-primary rounded-2xl hover:bg-primary/10 cursor-pointer px-4">
                       <div className="size-12 aspect-square rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <MapPin className="size-6 text-primary" />
@@ -90,7 +90,7 @@ export const ContactSection = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="group">
                     <div className="flex items-center gap-3 border-y-2 hover:border-primary/70 transition-all duration-300 border-primary rounded-2xl hover:bg-primary/10 cursor-pointer px-4">
